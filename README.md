@@ -30,7 +30,7 @@ A Vietnamese-language voice cloning and audiobook platform designed for elderly 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/than-thanh-audiobook.git
+git clone https://github.com/pbat08/than-thanh-audiobook.git
 cd than-thanh-audiobook
 ```
 
