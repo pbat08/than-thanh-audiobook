@@ -2,11 +2,6 @@
 
 A Vietnamese audiobook platform with voice cloning capabilities, designed for elderly users and Alzheimer's patients.
 
-## Live Demo
-
-- Frontend: https://than-thanh-audiobook.vercel.app
-- Backend: https://than-thanh-audiobook-api.up.railway.app
-
 ## Features
 
 - Voice cloning technology
@@ -28,51 +23,18 @@ A Vietnamese audiobook platform with voice cloning capabilities, designed for el
 
 ```
 than-thanh-audiobook/
-├── client/                 # Frontend React application
-│   ├── public/            # Static files
-│   └── src/               # React source code
-│       ├── components/    # React components
-│       ├── pages/         # Page components
-│       ├── store/         # State management
-│       └── utils/         # Utility functions
 ├── server/                # Backend Node.js application
-│   ├── models/           # Database models
-│   ├── routes/           # API routes
-│   ├── middleware/       # Custom middleware
-│   └── utils/            # Utility functions
-└── docs/                 # Documentation
+│   ├── index.js          # Main server file
+│   ├── package.json      # Server dependencies
+│   ├── railway.toml      # Railway configuration
+│   └── routes/           # API routes
+│       ├── auth.js       # Authentication routes
+│       ├── books.js      # Book routes
+│       └── users.js      # User routes
+└── .env                  # Environment variables
 ```
 
 ## Setup Instructions
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- MongoDB
-- Google OAuth credentials
-
-### Environment Variables
-
-Create `.env` files in both client and server directories:
-
-#### Server (.env)
-```
-PORT=5000
-NODE_ENV=development
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-JWT_EXPIRES_IN=24h
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-FRONTEND_URL=https://than-thanh-audiobook.vercel.app
-```
-
-#### Client (.env)
-```
-REACT_APP_API_URL=http://localhost:5000/api
-```
-
-### Installation
 
 1. Clone the repository:
 ```bash
@@ -82,33 +44,20 @@ cd than-thanh-audiobook
 
 2. Install dependencies:
 ```bash
-# Install server dependencies
 cd server
-npm install
-
-# Install client dependencies
-cd ../client
 npm install
 ```
 
-3. Start development servers:
-```bash
-# Start backend server
-cd server
-npm run dev
+3. Set up environment variables:
+- Copy `.env.example` to `.env`
+- Update the values with your actual credentials
 
-# Start frontend server
-cd client
-npm start
+4. Start the server:
+```bash
+npm run dev
 ```
 
 ## Deployment
-
-### Frontend (Vercel)
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Set environment variables
-4. Deploy
 
 ### Backend (Railway)
 1. Push code to GitHub
@@ -116,18 +65,6 @@ npm start
 3. Set environment variables
 4. Deploy
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-For any questions or suggestions, please open an issue in the repository. 
+This project is licensed under the MIT License. 
