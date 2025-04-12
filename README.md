@@ -1,14 +1,20 @@
 # Thân Thanh Audiobook
 
-A Vietnamese-language voice cloning and audiobook platform designed for elderly users, including those with Alzheimer's.
+A Vietnamese audiobook platform with voice cloning capabilities, designed for elderly users and Alzheimer's patients.
+
+## Live Demo
+
+- Frontend: https://than-thanh-audiobook.vercel.app
+- Backend: https://than-thanh-audiobook-api.up.railway.app
 
 ## Features
 
 - Voice cloning technology
-- Audiobook generation
-- Curated library of Vietnamese literature
-- User progress tracking
-- User-friendly interface for elderly users
+- Vietnamese audiobook library
+- User-friendly interface
+- Reading progress tracking
+- Google authentication
+- Favorites system
 
 ## Tech Stack
 
@@ -18,81 +24,110 @@ A Vietnamese-language voice cloning and audiobook platform designed for elderly 
 - Authentication: JWT, Google OAuth
 - Deployment: Vercel (Frontend), Railway (Backend)
 
-## Getting Started
+## Project Structure
+
+```
+than-thanh-audiobook/
+├── client/                 # Frontend React application
+│   ├── public/            # Static files
+│   └── src/               # React source code
+│       ├── components/    # React components
+│       ├── pages/         # Page components
+│       ├── store/         # State management
+│       └── utils/         # Utility functions
+├── server/                # Backend Node.js application
+│   ├── models/           # Database models
+│   ├── routes/           # API routes
+│   ├── middleware/       # Custom middleware
+│   └── utils/            # Utility functions
+└── docs/                 # Documentation
+```
+
+## Setup Instructions
 
 ### Prerequisites
 
 - Node.js (v14 or higher)
-- npm (v6 or higher)
-- MongoDB (local or Atlas)
+- MongoDB
+- Google OAuth credentials
+
+### Environment Variables
+
+Create `.env` files in both client and server directories:
+
+#### Server (.env)
+```
+PORT=5000
+NODE_ENV=development
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRES_IN=24h
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+FRONTEND_URL=https://than-thanh-audiobook.vercel.app
+```
+
+#### Client (.env)
+```
+REACT_APP_API_URL=http://localhost:5000/api
+```
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/pbat08/than-thanh-audiobook.git
+git clone https://github.com/yourusername/than-thanh-audiobook.git
 cd than-thanh-audiobook
 ```
 
 2. Install dependencies:
 ```bash
-# Install backend dependencies
+# Install server dependencies
 cd server
 npm install
 
-# Install frontend dependencies
+# Install client dependencies
 cd ../client
 npm install
 ```
 
-3. Set up environment variables:
-- Create `.env` file in the root directory
-- Add the following variables:
-```
-# Server Configuration
-PORT=5000
-NODE_ENV=development
-
-# MongoDB Configuration
-MONGODB_URI=your_mongodb_uri
-
-# JWT Configuration
-JWT_SECRET=your_jwt_secret
-JWT_EXPIRES_IN=24h
-
-# Google OAuth Configuration
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-
-# Frontend Configuration
-REACT_APP_API_URL=http://localhost:5000/api
-```
-
-4. Start the development servers:
+3. Start development servers:
 ```bash
 # Start backend server
 cd server
 npm run dev
 
 # Start frontend server
-cd ../client
+cd client
 npm start
 ```
 
 ## Deployment
 
-The application is deployed on:
-- Frontend: https://than-thanh-audiobook.vercel.app
-- Backend: https://than-thanh-audiobook-api.up.railway.app
+### Frontend (Vercel)
+1. Push code to GitHub
+2. Connect repository to Vercel
+3. Set environment variables
+4. Deploy
+
+### Backend (Railway)
+1. Push code to GitHub
+2. Connect repository to Railway
+3. Set environment variables
+4. Deploy
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+
+For any questions or suggestions, please open an issue in the repository. 
